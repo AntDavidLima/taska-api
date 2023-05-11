@@ -1,6 +1,6 @@
-import { ResourceNotFoundError } from "@/errors/ResourceNotFoundError";
-import { TaskRepository } from "@/repositories/TaskRepository";
 import { Prisma } from "@prisma/client";
+import { TaskRepository } from "../repositories/TaskRepository.js";
+import { ResourceNotFoundError } from "../errors/ResourceNotFoundError.js";
 
 export class TaskService {
   constructor(private taskRepository: TaskRepository) {}

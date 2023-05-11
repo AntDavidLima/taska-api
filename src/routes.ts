@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
-import { TaskController } from "./controllers/TaskController";
-import { CompleteTaskController } from "./controllers/CompleteTaskController";
+import { TaskController } from "./controllers/TaskController.ts";
+import { CompleteTaskController } from "./controllers/CompleteTaskController.ts";
 
 export async function routes(app: FastifyInstance) {
   app.post("/tasks", TaskController.save);

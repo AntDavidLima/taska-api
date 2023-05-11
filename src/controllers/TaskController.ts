@@ -1,6 +1,6 @@
-import { TaskServiceFactory } from "@/factories/TaskServiceFactory";
 import { FastifyReply, FastifyRequest } from "fastify";
 import z from "zod";
+import { TaskServiceFactory } from "../factories/TaskServiceFactory.js";
 
 export class TaskController {
   static async save(request: FastifyRequest, reply: FastifyReply) {
