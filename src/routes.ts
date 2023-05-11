@@ -1,5 +1,6 @@
 import { FastifyInstance } from "fastify";
+import { TaskController } from "./controllers/TaskController";
 
 export async function routes(app: FastifyInstance) {
-  app.get("/", (_request, reply) => reply.send("It works!"));
+  app.post("/tasks", TaskController.save);
 }

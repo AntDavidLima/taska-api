@@ -10,9 +10,15 @@
   "author": "David Lima",
   "license": "MIT",
   "devDependencies": {
-    "tsx": "^3.12.7"
+    "prisma": "^4.14.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "fastify": "^4.17.0"
+    "@prisma/client": "^4.14.0",
+    "@types/node": "^20.1.2",
+    "fastify": "^4.17.0",
+    "sqlite3": "^5.1.6",
+    "zod": "^3.21.4"
   }
 }
