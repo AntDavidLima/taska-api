@@ -9,7 +9,7 @@ export class TaskRepository {
     });
   }
 
-  async findMany() {
+  async findAll() {
     return await this.prisma.task.findMany();
   }
 
@@ -22,6 +22,12 @@ export class TaskRepository {
 
   async findById(id: number) {
     return await this.prisma.task.findUnique({
+      where: { id },
+    });
+  }
+
+  async delete(id: number) {
+    return await this.prisma.task.delete({
       where: { id },
     });
   }

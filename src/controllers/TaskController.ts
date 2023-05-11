@@ -45,4 +45,18 @@ export class TaskController {
 
     return reply.status(200).send(task);
   }
+
+  static async destroy(request: FastifyRequest, reply: FastifyReply) {
+    const paramsSchema = z.object({
+      id: z.coerce.number(),
+    });
+
+    const { id } = paramsSchema.parse(request.params);
+
+    const taskService = TaskServiceFactory.make();
+
+    const task = await taskService.destroy(id);
+
+    return reply.status(200).send(task);
+  }
 }

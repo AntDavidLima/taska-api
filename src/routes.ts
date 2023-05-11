@@ -5,4 +5,5 @@ export async function routes(app: FastifyInstance) {
   app.post("/tasks", TaskController.save);
   app.get("/tasks", TaskController.index);
   app.put("/tasks/:id", TaskController.update);
+  app.delete("/tasks/:id", TaskController.destroy);
 }

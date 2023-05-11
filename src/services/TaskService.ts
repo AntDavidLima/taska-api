@@ -10,7 +10,7 @@ export class TaskService {
   }
 
   async index() {
-    return await this.taskRepository.findMany();
+    return await this.taskRepository.findAll();
   }
 
   async update(id: number, task: Prisma.TaskUpdateInput) {
@@ -21,5 +21,15 @@ export class TaskService {
     }
 
     return await this.taskRepository.update(id, task);
+  }
+
+  async destroy(id: number) {
+    const taskExists = await this.taskRepository.findById(id);
+
+    if (!taskExists) {
+      throw new ResourceNotFoundError("Task not found");
+    }
+
+    return await this.taskRepository.delete(id);
   }
 }
