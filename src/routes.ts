@@ -3,4 +3,5 @@ import { TaskController } from "./controllers/TaskController";
 
 export async function routes(app: FastifyInstance) {
   app.post("/tasks", TaskController.save);
+  app.get("/tasks", TaskController.index);
 }

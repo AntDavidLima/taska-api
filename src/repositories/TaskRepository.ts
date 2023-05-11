@@ -8,4 +8,8 @@ export class TaskRepository {
       data: task,
     });
   }
+
+  async index() {
+    return await this.prisma.task.findMany();
+  }
 }

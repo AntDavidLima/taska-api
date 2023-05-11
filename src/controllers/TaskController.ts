@@ -17,4 +17,12 @@ export class TaskController {
 
     return reply.status(201).send(task);
   }
+
+  static async index(_request: FastifyRequest, reply: FastifyReply) {
+    const taskService = TaskServiceFactory.make();
+
+    const tasks = await taskService.index();
+
+    return reply.status(200).send(tasks);
+  }
 }

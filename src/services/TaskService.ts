@@ -7,4 +7,8 @@ export class TaskService {
   async save(task: Prisma.TaskCreateInput) {
     return await this.taskRepository.save(task);
   }
+
+  async index() {
+    return await this.taskRepository.index();
+  }
 }
